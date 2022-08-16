@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+:root {
+  --lightCyan: 193 38% 86%;
+  --neonGreen: 150 100% 66%;
+  --grayishBlue: 217 19% 38%;
+  --darkGrayishBlue: 217 19% 24%;
+  --light: 219 17% 59%;
+  --darkBlue: 218 23% 16%;
+}
+
+*, html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 14px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  background: transparent;
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+button:active,
+button:focus,
+a:active,
+a:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-display: fallback;
+  font-family: 14px;
+  min-height: 100vh;
+  position: relative;
+  background-color: hsl(var(--darkBlue));
+  color: hsl(var(--lightCyan));
+
+  display: grid;
+  place-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.icon {
+  pointer-events: none;
+}
+
+.footer {
+  position: absolute;
+  inset: auto 0 0;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  color: hsl(var(--grayishBlue));
+}
+
+.footer a {
+  font-weight: 800;
+  transition: all 0.1s;
+}
+
+.footer a:hover {
+  color: hsl(var(--light));
+}
+
+.advice__box {
+  width: min(91.5%, 540px);
+  background-color: hsl(var(--darkGrayishBlue));
+  text-align: center;
+  position: relative;
+  padding: 40px 25px 65px;
+  border-radius: 0.7rem;
+  box-shadow: 0px 20px 40px -10px rgb(0 0 0 / 0.2);
+}
+
+.advice__intro {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  color: hsl(var(--neonGreen));
+}
+
+.advice__text {
+  font-weight: 800;
+  font-size: 24px;
+  margin-block: 20px 30px;
+}
+
+.advice__text::before { content: open-quote; }
+.advice__text::after { content: close-quote; }
+
+.advice__divider {
+  width: 100%;
+  height: 16px;
+  background-image: url("./images/pattern-divider-desktop.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.advice__button {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: hsl(var(--neonGreen));
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  transition: all 0.1s;
+}
+
+.advice__button img {
+  width: 25px;
+  height: 25px;
+}
+
+.advice__button:hover {
+  box-shadow: 0px 0px 40px hsl(var(--neonGreen) / 0.7);
+}
+
+@media screen and (min-width: 1200px){
+  .advice__box {
+    padding: 45px 45px 70px;
+  }
+
+  .advice__intro {
+    font-size: 0.8rem;
+  }
+
+  .advice__text {
+    font-size: 28px;
+    margin-block: 26px 35px;
+  }
+}
+
+@media screen and (max-height: 400px){
+  body {
+    min-height: calc(100vh + 150px);
+  }
+}
